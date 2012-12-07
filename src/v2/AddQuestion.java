@@ -54,6 +54,21 @@ public class AddQuestion extends JFrame {
 					tfe1.setVisible(true);
 					dispose();
 				}
+				else if(comboBox.getSelectedItem() == "Multiple Choice") {
+					//tfe1 = new TrueFalseEditor();
+					//tfe1.setVisible(true);
+					dispose();
+				}
+				else if(comboBox.getSelectedItem() == "Match") {
+					//tfe1 = new TrueFalseEditor();
+					//tfe1.setVisible(true);
+					dispose();
+				}
+				else if(comboBox.getSelectedItem() == "Essay") {
+					//tfe1 = new TrueFalseEditor();
+					//tfe1.setVisible(true);
+					dispose();
+				}
 			}
 		});
 		contentPane.add(btnCreateQuestion, "flowx,cell 1 3,alignx right");

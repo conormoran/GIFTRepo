@@ -100,7 +100,7 @@ public class TrueFalseEditor extends JFrame {
 				
 				//v1.GIFTQuizEditor.GIFTQuizEditor.textArea.append(title + question + answer));
 				//parent textArea.setText(answer);
-				text = title + " " + question + " " + answer;
+				text = "::" + title + ":: " + question + " " + answer;
 				v2.MoodleGIFTQuiz.setText(text);
 				v2.Main.refreshFrame();
 				dispose();

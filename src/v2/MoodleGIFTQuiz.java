@@ -1,7 +1,5 @@
 package v2;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -12,8 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
-import javax.swing.border.EmptyBorder;
-
 import net.miginfocom.swing.MigLayout;
 
 public class MoodleGIFTQuiz extends JFrame {
@@ -22,7 +18,6 @@ public class MoodleGIFTQuiz extends JFrame {
 	static String gift = "";
 	static JTextArea textArea;
 	static AddQuestion addQ;
-	//static ArrayList<String> q = new ArrayList();
 	static int num = 1;
 	
 	public MoodleGIFTQuiz() {
@@ -72,7 +67,7 @@ public class MoodleGIFTQuiz extends JFrame {
 	
 	public static void setText(String text) {
 		gift = text;
-		textArea.append("::Q" + num + ":: " + gift + "\n\n");
+		textArea.append(" " + gift + "\n\n");
 		num++;
 	}
 
