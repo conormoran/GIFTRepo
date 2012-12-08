@@ -11,6 +11,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import javax.swing.Action;
 
 public class MoodleGIFTQuiz extends JFrame {
 
@@ -19,6 +22,7 @@ public class MoodleGIFTQuiz extends JFrame {
 	static JTextArea textArea;
 	static AddQuestion addQ;
 	static int num = 1;
+	private final Action action = new SwingAction();
 	
 	public MoodleGIFTQuiz() {
 		setResizable(false);
@@ -60,9 +64,6 @@ public class MoodleGIFTQuiz extends JFrame {
 		
 		JButton btnNewButton = new JButton("Save GIFT File");
 		getContentPane().add(btnNewButton, "flowx,cell 1 2,alignx right");
-		
-		JButton btnClose = new JButton("Close");
-		getContentPane().add(btnClose, "cell 1 2,alignx right");
 	}
 	
 	public static void setText(String text) {
@@ -71,4 +72,12 @@ public class MoodleGIFTQuiz extends JFrame {
 		num++;
 	}
 
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
+	}
 }

@@ -18,6 +18,7 @@ public class AddQuestion extends JFrame {
 	
 	private JPanel contentPane;
 	TrueFalseEditor tfe1;
+	MultipleEditor me1;
 
 	public AddQuestion() {
 		setResizable(false);
@@ -27,7 +28,7 @@ public class AddQuestion extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[][grow]", "[][][][]"));
+		contentPane.setLayout(new MigLayout("", "[][grow]", "[15px:n][][15px:n][]"));
 		
 		JLabel lblChooseQuestionType = new JLabel("Choose Question Type:");
 		contentPane.add(lblChooseQuestionType, "cell 0 1,alignx trailing");
@@ -55,8 +56,8 @@ public class AddQuestion extends JFrame {
 					dispose();
 				}
 				else if(comboBox.getSelectedItem() == "Multiple Choice") {
-					//tfe1 = new TrueFalseEditor();
-					//tfe1.setVisible(true);
+					me1 = new MultipleEditor();
+					me1.setVisible(true);
 					dispose();
 				}
 				else if(comboBox.getSelectedItem() == "Match") {

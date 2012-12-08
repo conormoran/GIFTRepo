@@ -23,7 +23,7 @@ public class TrueFalseEditor extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	private JTextField textField_1;
+	private JTextField txtTruefalse;
 	private JTextField textField_2;
 	
 	String text = "";
@@ -51,10 +51,11 @@ public class TrueFalseEditor extends JFrame {
 		JLabel lblQuestionType_1 = new JLabel("Question Type:");
 		contentPane.add(lblQuestionType_1, "cell 0 1,alignx trailing");
 		
-		textField_1 = new JTextField();
-		textField_1.setEditable(false);
-		contentPane.add(textField_1, "cell 1 1,growx");
-		textField_1.setColumns(10);
+		txtTruefalse = new JTextField();
+		txtTruefalse.setText("True/False");
+		txtTruefalse.setEditable(false);
+		contentPane.add(txtTruefalse, "cell 1 1,growx");
+		txtTruefalse.setColumns(10);
 		
 		JLabel lblQuestionTitleoptional = new JLabel("Question Title (Optional):");
 		contentPane.add(lblQuestionTitleoptional, "cell 0 2,alignx right");
@@ -78,6 +79,7 @@ public class TrueFalseEditor extends JFrame {
 		contentPane.add(lblQuestionType, "cell 0 4,alignx right,aligny center");
 		
 		final JRadioButton rdbtnTrue = new JRadioButton("True");
+		rdbtnTrue.setSelected(true);
 		buttonGroup.add(rdbtnTrue);
 		contentPane.add(rdbtnTrue, "flowx,cell 1 4");
 		
@@ -98,8 +100,6 @@ public class TrueFalseEditor extends JFrame {
 					answer = "{F}";
 				}
 				
-				//v1.GIFTQuizEditor.GIFTQuizEditor.textArea.append(title + question + answer));
-				//parent textArea.setText(answer);
 				text = "::" + title + ":: " + question + " " + answer;
 				v2.MoodleGIFTQuiz.setText(text);
 				v2.Main.refreshFrame();
