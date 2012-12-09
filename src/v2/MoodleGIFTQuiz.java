@@ -27,6 +27,7 @@ import java.awt.GridLayout;
 public class MoodleGIFTQuiz extends JFrame {
 
 	private JPanel contentPane;
+	static JPanel panelmig;
 	static JPanel panel;
 	static String gift = "";
 	static JTextArea textArea;
@@ -38,7 +39,7 @@ public class MoodleGIFTQuiz extends JFrame {
 		setResizable(false);
 		setTitle("GIFT Quiz Editor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 420);
+		setBounds(100, 100, 940, 420);
 		getContentPane().setLayout(new MigLayout("", "[800px][300px:n,grow]", "[][323px,grow][]"));
 		
 		JLabel lblNewLabel = new JLabel("Quiz Questions");
@@ -51,9 +52,13 @@ public class MoodleGIFTQuiz extends JFrame {
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		getContentPane().add(scrollPane, "cell 0 1,grow");
 		
+		panelmig = new JPanel();
+		scrollPane.setViewportView(panelmig);
+		panelmig.setLayout(new MigLayout("", "[550px:n,grow,fill][20px:n,grow]", "[grow,fill][]"));
+		
 		panel = new JPanel();
-		scrollPane.setViewportView(panel);
-		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		panelmig.add(panel, "cell 0 0,grow");
+		panel.setLayout(new GridLayout(3, 1, 0, 0));
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		getContentPane().add(scrollPane_1, "cell 1 1,grow");

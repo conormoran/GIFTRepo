@@ -107,6 +107,7 @@ public class TrueFalseEditor extends JFrame {
 				qp1 = new QuestionPanel();
 				qp1.setNum(2);
 				qp1.setTitle(title);
+				qp1.setType("True/False");
 				qp1.setQuestion(question);
 				qp1.setAns1(answer);
 				qp1.setCorrect1(100);

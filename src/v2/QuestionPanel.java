@@ -31,13 +31,13 @@ public class QuestionPanel extends JPanel {
 	private JTextField textField_9;
 	private JTextArea textArea;
 	
-	String qNum;
+	static String qNum = "Q1";
 
 	public QuestionPanel() {
 		setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "qNum", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(null, qNum, TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		add(panel, BorderLayout.CENTER);
 		panel.setLayout(new MigLayout("", "[][grow][::80px,grow,fill]", "[][][grow][][][][][][grow,fill]"));
 		

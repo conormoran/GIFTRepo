@@ -235,6 +235,7 @@ public class MultipleEditor extends JFrame {
 				qp = new QuestionPanel();
 				qp.setNum(1);
 				qp.setTitle(title);
+				qp.setType("Multiple Choice");
 				qp.setQuestion(question);
 				qp.setAns1(answer1);
 				qp.setAns2(answer2);
