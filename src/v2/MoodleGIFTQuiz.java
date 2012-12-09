@@ -21,10 +21,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.Action;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
 public class MoodleGIFTQuiz extends JFrame {
 
 	private JPanel contentPane;
+	static JPanel panel;
 	static String gift = "";
 	static JTextArea textArea;
 	static AddQuestion addQ;
@@ -48,9 +51,9 @@ public class MoodleGIFTQuiz extends JFrame {
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		getContentPane().add(scrollPane, "cell 0 1,grow");
 		
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		scrollPane.setViewportView(panel);
-		panel.setLayout(new MigLayout("", "[grow]", "[]"));
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		getContentPane().add(scrollPane_1, "cell 1 1,grow");
@@ -76,30 +79,6 @@ public class MoodleGIFTQuiz extends JFrame {
 				
 				saveBActionPerformed();
 				
-				
-//				//Opens filechooser
-//				JFileChooser fc = new JFileChooser(JFileChooser.FILE_FILTER_CHANGED_PROPERTY); 
-//				fc.setDialogTitle("Save .txt File");
-//				
-//				if (fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION)
-//				{
-//					//If they clicked yes call fileSaver method
-//					fileSaver(fc);
-//				}
-//				else
-//				{
-//					//Show cancelled message
-//					JOptionPane.showMessageDialog(this, "Save Cancelled.", "Word Replacer Application Save Cancelled", JOptionPane.WARNING_MESSAGE);
-//				}
-				
-//				try	{
-//					//String s = textArea.getText();
-//					File f = new File("Quiz.gift");
-//					FileWriter fw = new FileWriter(f);
-//					fw.write(s);
-//				} catch(IOException ioe) {
-//					System.out.println("Exception Caught : " +ioe.getMessage());
-//				}
 			}
 		});
 		getContentPane().add(btnNewButton, "flowx,cell 1 2,alignx right");
@@ -180,4 +159,9 @@ public class MoodleGIFTQuiz extends JFrame {
 		}
 	}
 	//End fileSaver
+	
+	public static void insertQuestionPanel(QuestionPanel qp1) {
+		panel.add(qp1);
+		v2.Main.refreshFrame();
+	}
 }

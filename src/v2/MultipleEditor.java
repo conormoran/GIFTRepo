@@ -28,6 +28,7 @@ public class MultipleEditor extends JFrame {
 	private JTextField textField;
 	private JTextField txtTruefalse;
 	private JTextField textField_2;
+	QuestionPanel qp;
 	
 	String text = "";
 	String title = "";
@@ -131,14 +132,15 @@ public class MultipleEditor extends JFrame {
 		panel.add(textField_1, "cell 0 1,growx,aligny top");
 		textField_1.setColumns(10);
 		
-		textField_11 = new JTextField();
+		textField_11 = new JTextField("0");
+		textField_11.setHorizontalAlignment(textField_11.RIGHT);
 		panel.add(textField_11, "cell 1 1,growx");
 		textField_11.setColumns(10);
 		
 		textField_3 = new JTextField();
 		panel.add(textField_3, "cell 2 1,growx,aligny top");
 		textField_3.setColumns(10);
-		SpinnerModel model1 = new SpinnerNumberModel(0, 0, 100, 1);
+		SpinnerModel model1 = new SpinnerNumberModel(100, 0, 100, 1);
 		final JSpinner spinner = new JSpinner(model1);
 		panel.add(spinner, "cell 3 1,alignx left,growy");
 		
@@ -147,6 +149,8 @@ public class MultipleEditor extends JFrame {
 		textField_4.setColumns(10);
 		
 		textField_12 = new JTextField();
+		textField_12.setText("0");
+		textField_12.setHorizontalAlignment(textField_12.RIGHT);
 		panel.add(textField_12, "cell 1 2,growx");
 		textField_12.setColumns(10);
 		
@@ -158,10 +162,14 @@ public class MultipleEditor extends JFrame {
 		panel.add(spinner_1, "cell 3 2,alignx left,growy");
 		
 		textField_13 = new JTextField();
+		textField_13.setText("0");
+		textField_13.setHorizontalAlignment(textField_13.RIGHT);
 		panel.add(textField_13, "cell 1 3,growx");
 		textField_13.setColumns(10);
 		
 		textField_14 = new JTextField();
+		textField_14.setText("0");
+		textField_14.setHorizontalAlignment(textField_14.RIGHT);
 		panel.add(textField_14, "cell 1 4,growx");
 		textField_14.setColumns(10);
 		
@@ -223,6 +231,22 @@ public class MultipleEditor extends JFrame {
 						+ "=%" + correct3 + "%" + answer3 + ":" + range3 + " # " + fb3
 						+ "=%" + correct4 + "%" + answer4 + ":" + range4 + " # " + fb4
 				+ " }";
+				
+				qp = new QuestionPanel();
+				qp.setNum(1);
+				qp.setTitle(title);
+				qp.setQuestion(question);
+				qp.setAns1(answer1);
+				qp.setAns2(answer2);
+				qp.setAns3(answer3);
+				qp.setAns4(answer4);
+				qp.setCorrect1(correct1);
+				qp.setCorrect2(correct2);
+				qp.setCorrect3(correct3);
+				qp.setCorrect4(correct4);
+				
+				v2.MoodleGIFTQuiz.insertQuestionPanel(qp);
+				
 				v2.MoodleGIFTQuiz.setText(text);
 				v2.Main.refreshFrame();
 				dispose();

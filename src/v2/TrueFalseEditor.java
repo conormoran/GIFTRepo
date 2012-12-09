@@ -26,6 +26,8 @@ public class TrueFalseEditor extends JFrame {
 	private JTextField txtTruefalse;
 	private JTextField textField_2;
 	
+	QuestionPanel qp1;
+	
 	String text = "";
 	String title = "";
 	String question = "";
@@ -101,8 +103,18 @@ public class TrueFalseEditor extends JFrame {
 				}
 				
 				text = "::" + title + ":: " + question + " " + answer;
+				
+				qp1 = new QuestionPanel();
+				qp1.setNum(2);
+				qp1.setTitle(title);
+				qp1.setQuestion(question);
+				qp1.setAns1(answer);
+				qp1.setCorrect1(100);
+				
+				v2.MoodleGIFTQuiz.insertQuestionPanel(qp1);
 				v2.MoodleGIFTQuiz.setText(text);
 				v2.Main.refreshFrame();
+				
 				dispose();
 			}
 			
@@ -118,6 +130,10 @@ public class TrueFalseEditor extends JFrame {
 		});
 		contentPane.add(btnCancel, "cell 1 5,alignx right");
 		
+	}
+	
+	public QuestionPanel getQuestionPanel(QuestionPanel qp) {
+		return qp;
 	}
 
 }
